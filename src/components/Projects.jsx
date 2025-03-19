@@ -2,11 +2,21 @@ import Ecommerce from '../../public/Ecommerce.webp'
 import EduTutor from '../../public/EduTutor.webp'
 import University from '../../public/university.webp'
 import projectManager from '../../public/projectManager.webp'
+import Pos from '../../public/POS.webp'
 function Projects() {
   const projects = [
     {
+      id: 6,
+      title: "Point OF Sale System",
+      description: "A complete  ecommerce website  for selling books with authentication, payment integration and admin dashboard for management.",
+      image: Pos, 
+      tech:['MongoDB','Express','React','Node','Tailwind','Razorpay'],
+      github: "https://github.com/Yawi-1/Point-Of-Sale-System",
+      live: "https://pos11.netlify.app/",
+    },
+    {
       id: 3,
-      title: "E-Commerce Website",
+      title: "AR Bookstore",
       description: "A complete  ecommerce website  for selling books with authentication, payment integration and admin dashboard for management.",
       image: Ecommerce, 
       tech:['Firebase','React','Tailwind','Razorpay'],
