@@ -25,7 +25,7 @@ function Home() {
               Mudasir Javid Malik
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 font-medium">
-              Full Stack Developer
+              Full Stack Web Developer
             </p>
             <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto lg:mx-0">
               Crafting digital experiences with modern web technologies.
