@@ -5,24 +5,27 @@ import {
 } from "react-icons/fa";
 import {
   SiMongodb, SiTailwindcss, SiBootstrap,
-  SiFirebase, SiExpress
+  SiFirebase, SiExpress,SiTypescript, SiNextdotjs,SiCplusplus
+  
 } from "react-icons/si";
 import { MdDesignServices } from "react-icons/md";
 import { IoIosColorPalette } from "react-icons/io";
 
 function Skills() {
   const skills = [
-    { name: "React", icon: FaReact, level: 90, color: "text-blue-500", category: "Frontend" },
-    { name: "HTML", icon: FaHtml5, level: 95, color: "text-orange-500", category: "Frontend" },
-    { name: "CSS", icon: FaCss3Alt, level: 90, color: "text-blue-600", category: "Frontend" },
+    { name: "MongoDB", icon: SiMongodb, level: 80, color: "text-green-700", category: "Database" },
+    { name: "Express.js", icon: SiExpress, level: 85, color: "text-gray-500", category: "Backend" },
+    { name: "React Js", icon: FaReact, level: 90, color: "text-blue-500", category: "Frontend" },
+    { name: "Node.js", icon: FaNodeJs, level: 85, color: "text-green-500", category: "Backend" },
+    { name: "Next Js", icon: SiNextdotjs, level: 70, color: "text-white", category: "Frontend" },
+    { name: "TypeScript", icon: SiTypescript, level: 75, color: "text-blue-600", category: "Frontend" },
     { name: "JavaScript", icon: FaJsSquare, level: 90, color: "text-yellow-500", category: "Frontend" },
     { name: "Tailwind CSS", icon: SiTailwindcss, level: 85, color: "text-cyan-500", category: "Frontend" },
     { name: "Bootstrap", icon: SiBootstrap, level: 85, color: "text-purple-500", category: "Frontend" },
-
-    { name: "Node.js", icon: FaNodeJs, level: 85, color: "text-green-500", category: "Backend" },
-    { name: "Express.js", icon: SiExpress, level: 85, color: "text-gray-500", category: "Backend" },
-
-    { name: "MongoDB", icon: SiMongodb, level: 80, color: "text-green-700", category: "Database" },
+    { name: "HTML", icon: FaHtml5, level: 95, color: "text-orange-500", category: "Frontend" },
+    { name: "CSS", icon: FaCss3Alt, level: 90, color: "text-blue-600", category: "Frontend" },
+    { name: "C++", icon: SiCplusplus, level: 90, color: "text-blue-600" },
+   
     { name: "Firebase", icon: SiFirebase, level: 80, color: "text-yellow-400", category: "Database" },
 
     { name: "Git", icon: FaGit, level: 85, color: "text-red-500", category: "Other" },

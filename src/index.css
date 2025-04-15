@@ -11,6 +11,16 @@
 body {
   margin: 0;
   min-width: 320px;
+  cursor: none !important;
+}
+
+
+a, button, input, textarea, select, label {
+  transition: transform 0.2s ease;
+}
+
+a:hover, button:hover {
+  transform: scale(1.05);
 }
 
 /* Animation Keyframes */

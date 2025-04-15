@@ -8,7 +8,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
-  const navItems = ["home", "skills", "experience", "projects", "contact"];
+  const navItems = ["home",  "experience", "projects","skills", "contact"];
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

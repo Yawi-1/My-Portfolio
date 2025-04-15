@@ -15,6 +15,7 @@ const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
 const Login = lazy(() => import("./Dashboard/Login"));
 const Dashboard = lazy(() => import("./Dashboard/Dashboard"));
+import CircleFollower from "./components/CircleFollower";
 
 // Loading placeholder (Fallback UI)
 const Loader = () => (
@@ -34,6 +35,8 @@ function App() {
   return (
     <ThemeProvider>
       <Toaster richColors position="top-right" />
+      <CircleFollower />
+      {/* Navbar */}
       <Routes>
         <Route
           path="/"

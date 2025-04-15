@@ -5,6 +5,7 @@ import University from '../../public/university.webp';
 import projectManager from '../../public/projectManager.webp';
 import Pos from '../../public/POS.webp';
 import Nutricare from '../../public/nutricare.webp';
+import JobListing from '../../public/joblist.png';
 
 function Projects() {
   const projects = [
@@ -37,6 +38,16 @@ function Projects() {
       category: "Frontend",
       github: "https://github.com/Yawi-1/ScRollArRu_Project",
       live: "https://scrollar4u.netlify.app/",
+    },
+    {
+      id: 312,
+      title: "Job Listing App",
+      description: "A job listing application built with MERN Stack , featuring a responsive design and a pagination and search jobs based on location.",
+      image: JobListing,
+      tech: ['MongoDB', 'React', 'Express','Tailwind'],
+      category: "Full Stack",
+      github: "https://github.com/Yawi-1/JobListing",
+      live: "https://joblisting11.netlify.app/",
     },
     {
       id: 1,
