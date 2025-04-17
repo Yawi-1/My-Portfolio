@@ -7,8 +7,40 @@ import {
   FaPhone,
 } from "react-icons/fa";
 import HeroImg from "../assets/HeroImg.webp";
+import { useEffect, useState } from "react";
+import Buttons from "./Buttons";
 
 function Home() {
+  const skills = ["Web Developer", "Designer", "Coder"];
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentSkill = skills[index];
+
+    const typeSpeed = isDeleting ? 100 : 200; // Faster when deleting
+
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        setText((prev) => prev.slice(0, -1));
+      } else {
+        setText((prev) => currentSkill.slice(0, prev.length + 1));
+      }
+
+      // When typing is done
+      if (!isDeleting && text === currentSkill) {
+        setTimeout(() => setIsDeleting(true), 1000); // Wait 1 sec, then start deleting
+      }
+      // When deleting is done
+      else if (isDeleting && text === "") {
+        setIsDeleting(false);
+        setIndex((prevIndex) => (prevIndex + 1) % skills.length); // Go to next word
+      }
+    }, typeSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, index, skills]);
   return (
     <section
       id="home"
@@ -17,22 +49,22 @@ function Home() {
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left Column - Text Content */}
         <div className="flex-1 space-y-6 text-center lg:text-left animate-fade-in-up">
-          <div className="space-y-4">
+          <div className="space-y-2 ">
             <p className="text-lg text-blue-600 dark:text-blue-400 font-medium">
               Hello, I'm
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Mudasir Javid Malik
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 font-medium">
-              Full Stack Web Developer
+            <p className="text-xl sm:text-2xl h-12 text-gray-600 dark:text-gray-300 font-medium">
+              {text}
             </p>
             <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto lg:mx-0">
               Crafting digital experiences with modern web technologies.
               Specializing in Full stack web development .
             </p>
           </div>
-
+             <Buttons />
           {/* Social Links */}
           <div className="flex justify-center lg:justify-start space-x-6">
             {[
@@ -73,6 +105,7 @@ function Home() {
               </a>
             ))}
           </div>
+        
         </div>
 
         {/* Right Column - Image and About Me */}
@@ -102,7 +135,6 @@ function Home() {
               <li>🤝 Team Player | Love collaborating & mentoring</li>
             </ul>
           </div>
-       
         </div>
       </div>
     </section>

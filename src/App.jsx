@@ -36,7 +36,6 @@ function App() {
     <ThemeProvider>
       <Toaster richColors position="top-right" />
       <CircleFollower />
-      {/* Navbar */}
       <Routes>
         <Route
           path="/"
