@@ -8,13 +8,14 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
+  const [show, setShow] = useState(false);
   const navItems = ["home",  "experience", "projects","skills", "contact"];
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-
+    setShow(true); // Trigger animation on mount
     return () => unsubscribe();
   }, []);
 
@@ -32,7 +33,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors p-4">
+    <nav className={`fixed w-full bg-white dark:bg-gray-900 shadow-lg z-50 transition-colors p-4 transform transition-all duration-700 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <span className="text-xl font-bold dark:text-white">Mudasir.dev</span>
@@ -63,7 +64,6 @@ function Navbar() {
                   Logout
                 </button>
               )}
-             
             </div>
             <ThemeToggle />
           </div>
@@ -122,8 +122,6 @@ function Navbar() {
                 Logout
               </button>
             )}
-
-           
           </div>
         </div>
       </div>
