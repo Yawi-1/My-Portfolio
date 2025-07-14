@@ -6,19 +6,10 @@ import projectManager from '../../public/projectManager.webp';
 import Pos from '../../public/POS.webp';
 import Nutricare from '../../public/nutricare.webp';
 import JobListing from '../../public/joblist.png';
+import Ns from '../../public/Ns.png'
 
 function Projects() {
   const projects = [
-    {
-      id: 6,
-      title: "Point of Sale System",
-      description: "A complete eCommerce website for selling books, featuring user authentication, Razorpay payment integration, and an admin dashboard for product and order management.",
-      image: Pos,
-      tech: ['MongoDB', 'Express', 'React', 'Node', 'Tailwind', 'Razorpay'],
-      category: "Full Stack",
-      github: "https://github.com/Yawi-1/Point-Of-Sale-System",
-      live: "https://pos11.netlify.app/",
-    },
     {
       id: 31,
       title: "Nutri Care",
@@ -28,6 +19,26 @@ function Projects() {
       category: "Full Stack",
       github: "https://github.com/Yawi-1/Dieticain",
       live: "https://nutricare11.netlify.app/",
+    },
+    {
+      id: 6,
+      title: "Nature Sovagen",
+      description: "A full stack website that helps a company to showcase their products online to increase reach promote their branding and get orders online.",
+      image: Ns,
+      tech: ['MongoDB', 'Express', 'EJS', 'Node', 'CSS', 'AOS', 'Razorpay'],
+      category: "Full Stack",
+      github: "https://github.com/Yawi-1/NatureSovageon",
+      live: "https://naturesovagen.com/",
+    },
+    {
+      id: 6,
+      title: "Point of Sale System",
+      description: "A complete eCommerce website for selling books, featuring user authentication, Razorpay payment integration, and an admin dashboard for product and order management.",
+      image: Pos,
+      tech: ['MongoDB', 'Express', 'React', 'Node', 'Tailwind', 'Razorpay'],
+      category: "Full Stack",
+      github: "https://github.com/Yawi-1/Point-Of-Sale-System",
+      live: "https://pos11.netlify.app/",
     },
     {
       id: 131,
@@ -44,7 +55,7 @@ function Projects() {
       title: "Job Listing App",
       description: "A job listing application built with MERN Stack , featuring a responsive design and a pagination and search jobs based on location.",
       image: JobListing,
-      tech: ['MongoDB', 'React', 'Express','Tailwind'],
+      tech: ['MongoDB', 'React', 'Express', 'Tailwind'],
       category: "Full Stack",
       github: "https://github.com/Yawi-1/JobListing",
       live: "https://joblisting11.netlify.app/",
@@ -96,20 +107,19 @@ function Projects() {
         </h2>
 
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 px-2">
-  {categories.map(category => (
-    <button
-      key={category}
-      onClick={() => setSelectedCategory(category)}
-      className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border text-sm font-medium transition-all ${
-        selectedCategory === category
-          ? 'bg-blue-600 text-white border-blue-600'
-          : 'bg-white text-gray-700 dark:text-gray-200 border-gray-300 hover:bg-blue-100 dark:bg-gray-800 dark:border-gray-700'
-      }`}
-    >
-      {category}
-    </button>
-  ))}
-</div>
+          {categories.map(category => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border text-sm font-medium transition-all ${selectedCategory === category
+                ? 'bg-blue-600 text-white border-blue-600'
+                : 'bg-white text-gray-700 dark:text-gray-200 border-gray-300 hover:bg-blue-100 dark:bg-gray-800 dark:border-gray-700'
+                }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
